@@ -1,4 +1,4 @@
-namespace Web.API
+namespace Domain.Entities
 {
     public class WeatherForecast
     {

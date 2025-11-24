@@ -1,3 +1,9 @@
 <Solution>
-  <Project Path="Web.API/Web.API.csproj" />
+  <Project Path="Application.Data/Application.Data.csproj" />
+  <Project Path="Domain/Domain.csproj" />
+  <Project Path="Handlers/Handlers.csproj" />
+  <Project Path="Infra.Data/Infra.Data.csproj" />
+  <Project Path="Infra.Services/Infra.Services.csproj" />
+  <Project Path="Ios/Ioc.csproj" />
+  <Project Path="Web.API/API.csproj" />
 </Solution>
