@@ -1,5 +1,7 @@
 ﻿namespace Ioc;
 
+using Application.Data;
+using Application.Data.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Serilog;
@@ -10,7 +12,7 @@ public static class LogModule
 {
     public static ILoggingBuilder AddApiLogger(this ILoggingBuilder builder, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString(Constants.DEFAULT_CONNECTION_STRING);
+        var connectionString = configuration.GetApplicationSecret(Constants.SECRET_CONNECTION_STRING);
 
         Log.Logger = new LoggerConfiguration()
             .WriteTo.MSSqlServer(

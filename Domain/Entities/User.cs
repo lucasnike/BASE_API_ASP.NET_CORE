@@ -19,5 +19,4 @@ public class User
 
     public IList<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
     public IList<Permission> Permissions { get; set; } = new List<Permission>();
-
 }

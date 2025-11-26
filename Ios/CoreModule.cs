@@ -1,5 +1,6 @@
 ﻿namespace Ioc;
 
+using Application.Data;
 using Application.Data.Controllers.WeatherForecast.WeatherForecastGetRequest;
 using Application.Data.Extensions;
 using FluentValidation;
@@ -14,8 +15,7 @@ public static class CoreModule
 {
     public static void AddCoreModules(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString(Constants.DEFAULT_CONNECTION_STRING);
-        var certificateA1Password = configuration.GetApplicationSecret("CertificateA1Password");
+        var connectionString = configuration.GetApplicationSecret(Constants.SECRET_CONNECTION_STRING);
         var mediatorLicense = configuration[Constants.MEDIATR_LICENSE_KEY];
 
         services.AddDbContext<ApiContext>(opt =>

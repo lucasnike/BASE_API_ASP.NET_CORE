@@ -1,6 +1,7 @@
 ﻿using Application.Data;
 using FluentValidation;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.Extensions.Logging;
 using ApiException = Application.Data.Exceptions.ApiException;
 
 namespace Estudante.API.Middlewares;
@@ -9,6 +10,8 @@ public class GlobalExceptionHandler : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
     {
+        var logger = httpContext.RequestServices.GetService<ILogger<GlobalExceptionHandler>>();
+
         var response = new DefaultResponse<object>();
         response.Success = false;
         response.Data = null;
@@ -33,6 +36,9 @@ public class GlobalExceptionHandler : IExceptionHandler
 
             response.Errors = errors;
         }
+
+        if (logger is not null)
+            logger.LogError(exception, "ERRO CAPTURADO NO MIDDLEWARE GLOBAL");
 
         await httpContext.Response.WriteAsJsonAsync(response);
 

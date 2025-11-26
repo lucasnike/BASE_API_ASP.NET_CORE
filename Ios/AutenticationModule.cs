@@ -7,6 +7,7 @@ using System.Text;
 using Application.Data.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Application.Data;
 
 public static class AutenticationModule
 {

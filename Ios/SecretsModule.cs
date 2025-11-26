@@ -4,6 +4,7 @@ namespace Ioc;
 
 using Amazon.SecretsManager;
 using Amazon.SecretsManager.Model;
+using Application.Data;
 using Azure.Core;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Configuration;

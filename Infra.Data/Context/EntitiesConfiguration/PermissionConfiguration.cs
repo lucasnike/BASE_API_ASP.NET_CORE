@@ -1,9 +1,20 @@
 ﻿namespace Infra.Data.Context.EntitiesConfiguration;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-internal class PermissionConfiguration
+internal class PermissionConfiguration : IEntityTypeConfiguration<Permission>
 {
+    public void Configure(EntityTypeBuilder<Permission> builder)
+    {
+        builder.Property(x => x.Name)
+            .IsRequired()
+            .HasColumnType("NVARCHAR(100)");
+
+        builder.Property(x => x.Description)
+            .HasColumnType("NVARCHAR(500)");
+
+        builder.HasIndex(x => x.Name).IsUnique();
+    }
 }
