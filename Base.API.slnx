@@ -1,9 +1,17 @@
 <Solution>
-  <Project Path="Application.Data/Application.Data.csproj" />
-  <Project Path="Domain/Domain.csproj" />
-  <Project Path="Handlers/Handlers.csproj" />
-  <Project Path="Infra.Data/Infra.Data.csproj" />
-  <Project Path="Infra.Services/Infra.Services.csproj" />
-  <Project Path="Ios/Ioc.csproj" />
-  <Project Path="Web.API/API.csproj" />
+  <Folder Name="/Application/">
+    <Project Path="Application.Data/Application.Data.csproj" />
+    <Project Path="Handlers/Handlers.csproj" />
+    <Project Path="Infra.Services/Infra.Services.csproj" />
+  </Folder>
+  <Folder Name="/Domain/">
+    <Project Path="Domain/Domain.csproj" />
+    <Project Path="Ios/Ioc.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infra.Data/Infra.Data.csproj" />
+  </Folder>
+  <Folder Name="/Presentation/">
+    <Project Path="Web.API/API.csproj" />
+  </Folder>
 </Solution>
